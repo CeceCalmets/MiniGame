@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroids</title>
+
+<style>
+    :root {
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #af04d1;
+}
+    body{
+        margin: 0;
+        font-size: 12px;
+    }
+
+    header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+
+/* button styling */
+    .button {
+        --border-right: 6px;
+        --text-stroke-color: rgba(255, 255, 255, 0.89);
+        --animation-color: #af04d1;
+        --fs-size: 2em;
+        letter-spacing: 3px;
+        text-decoration: none;
+        background: #080808;
+        font-size: var(--fs-size);
+        font-family: "Arial";
+        position: relative;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px var(--text-stroke-color);
+    }
+/* this is the text, when you hover on button */
+    .hover-text {
+        position: absolute;
+        box-sizing: border-box;
+        content: attr(data-text);
+        color: var(--animation-color);
+        width: 0%;
+        inset: 0;
+        border-right: var(--border-right) solid var(--animation-color);
+        overflow: hidden;
+        transition: 0.5s;
+        -webkit-text-stroke: 1px var(--animation-color);
+    }
+/* hover */
+    .button:hover .hover-text {
+        width: 100%;
+        filter: drop-shadow(0 0 23px var(--animation-color))
+    }
+
+</style>
+</head>
+
+<body>
+    <header class="header">
+    <button class="button" data-text="Awesome" onclick="myButton()">
+        <span class="actual-text">&nbsp; RESTART Game &nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;RESTART Game&nbsp;</span>
+    </button>
+    <a class="backToResume">Go Back to backToResume</a>
+        <button class="button" data-text="Awesome" onclick="myButton()">
+        <span class="actual-text">&nbsp; Go Back &nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;Go Back&nbsp;</span>
+    </button>
+    
+    </header>
+
+    <canvas></canvas>
+    
+    <script src="./script.Asteroids.js"></script>
+
+</body>
+</html>
