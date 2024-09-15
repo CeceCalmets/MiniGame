@@ -78,17 +78,14 @@
         <span class="actual-text">&nbsp; Go Back &nbsp;</span>
         <span aria-hidden="true" class="hover-text">&nbsp;Go Back&nbsp;</span>
     </button>
-    <button class="button" onclick="myFunction()">Instruction</button>
+    <a class="instruction">A for Left, W for Up, D for Right and Space to shoot the Asteroids</a>
     
     </header>
 
     <canvas></canvas>
     
     <script src="./script.Asteroids.js">
-        //popup 
-        function myFunction() {
-  alert("A for Left, W for up, D for Right and Use Space for shooting the Asteroids. Good luck! ");
-}
+
         //mini game
         const canvas = document.querySelector('canvas')
 const context = canvas.getContext ('2d')
